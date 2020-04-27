@@ -9,7 +9,24 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+   <body>
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+    </div>
+    <div class="container">
+      <%= yield %>
+
+    </div>
+    <div class="container">
+      <br> <br>
+      <h3>Not a real flight booker</h3>
+     
+    </div>
+    <div display = 'block'>
+    <br><%= debug(params) if Rails.env.development? %>
+<br><%= session.to_hash.inspect if Rails.env.development?  %>
+    </div>
   </body>
 </html>
