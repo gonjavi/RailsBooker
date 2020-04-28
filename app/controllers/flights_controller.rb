@@ -3,8 +3,8 @@ class FlightsController < ApplicationController
     @arrival_airports = @departure_airports = Airport.all
     @passengers = [['1',1],['2',2],['3',3],['4',4]]
     #@available_dates =  Flight.all.pluck(:leaving).uniq.sort
-    @last_date = Flight.maximum(:leaving).to_d
-    @flight_date = @first_date = Flight.minimum(:leaving).to_d
+    @last_date = Flight.maximum(:leaving).to_date
+    @flight_date = @first_date = Flight.minimum(:leaving).to_date
     @departure = @arrival = @arrival_airports.first
 
     if search = params[:flight]
