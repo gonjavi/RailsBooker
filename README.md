@@ -21,5 +21,4 @@ This a flight booker app built with Ruby on Rails, using advanced forms. We’ll
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
 * ...
